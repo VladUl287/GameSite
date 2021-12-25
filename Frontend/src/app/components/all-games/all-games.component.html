@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<input type="checkbox" id="genres-toogle" hidden>
+<label for="genres-toogle" class="genres-toogle-label">Жанры</label>
+<div class="container">
+    <div class="genres-list">
+        <button (click)="getAllGames()">Все</button>
+        <div *ngFor="let genre of genres">
+            <button (click)="getGamesByGenre(genre.id)">{{genre.name}}</button>
+        </div>
+    </div>
+    <div *ngIf="games;else loading" class="games-list">
+        <div *ngFor="let game of games"> 
+            <div *ngIf="game" class="game">
+                <div class="content">
+                    <a [routerLink]="['/games/main/' + game.id]">
+                        <img [src]="game.posterUrl" class="poster" alt="">
+                        <p class="game-name">{{game.name}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #loading>
+        <div class="loading"></div>
+    </ng-template>
+</div>

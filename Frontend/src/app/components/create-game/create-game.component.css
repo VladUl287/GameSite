@@ -1,0 +1,50 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+form > div {
+    margin: 0 0 15px;
+}
+
+form label {
+    user-select: none;
+    font-size: 14pt;
+    margin: 0 0 5px;
+    display: block;
+    color: #fff;
+}
+
+form input,
+form textarea,
+form select {
+    font-size: 12pt;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: .2em;
+}
+
+textarea {
+    resize: none;
+}
+
+.create-btn {
+    min-width: 150px;
+    padding: 10px;
+}
+
+.create-btn:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 95%;
+    }
+
+    form select {
+        width: 75%;
+    }
+}

@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <form [formGroup]="createForm">
+        <div>
+            <label for="name">Название</label>
+            <input id="name" type="text" formControlName="name">
+        </div>
+        <div>
+            <label for="description">Описание</label>
+            <textarea id="description" type="text" rows="15" maxlength="5000" formControlName="description"></textarea>
+        </div>
+        <div>
+            <label for="poster">Постер</label>
+            <input id="poster" type="file" (change)="handleFileInput($event)">
+        </div>
+        <div>
+            <label for="date">Дата релиза</label>
+            <input id="date" type="date" formControlName="releaseDate">
+        </div>
+        <div>
+            <label for="genreId">Жанр</label>
+            <select  *ngIf="genres" formControlName="genreId">
+                <option value="">Выберите жанр</option>
+                <option *ngFor="let genre of genres;" [value]="genre.id">
+                    {{genre.name}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <button class="create-btn" (click)="createGame()">Добавить</button>
+        </div>
+    </form>
+</div>

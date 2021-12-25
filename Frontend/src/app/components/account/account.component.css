@@ -1,0 +1,59 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.account-info p {
+    padding-left: 10px;
+    color: #fff;
+}
+
+.create-zone {
+    display: block;
+}
+
+.account-btn {
+    min-width: 16em;
+    text-align: center;
+    border: none;
+    outline: none;
+    user-select: none;
+    margin: .8em;
+    padding: .8em;
+    border-radius: .3em;
+    text-decoration: none;
+    background-color: #00b4d8;
+}
+
+.account-btn:hover {
+    cursor: pointer;
+    background-color: #48cae4;
+}
+
+.adm-btn {
+    display: block;
+    max-width: 16em;
+    text-align: center;
+    border: none;
+    outline: none;
+    user-select: none;
+    margin: .8em;
+    padding: .6em .8em;
+    text-decoration: none;
+    color: #000;
+    background-color: #efefef;
+}
+
+.adm-btn:focus,
+.adm-btn:hover {
+    cursor: pointer;
+    background-color: #efefefbd;
+}

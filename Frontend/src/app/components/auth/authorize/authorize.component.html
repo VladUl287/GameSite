@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="reg-form">
+        <form [formGroup]="authForm">
+            <div>
+                <p class="header">Вход</p>
+            </div>
+            <div>
+                <input class="info" type="text" placeholder="email" formControlName="email">
+            </div>
+            <div>
+                <input class="info" type="password" placeholder="пароль" formControlName="password">
+            </div>
+            <div>
+                <button class="login-btn" (click)="authorize()" #btnLogin>Войти</button>
+                <a routerLink="/auth/register" class="link">Регистрация</a>
+            </div>
+        </form>
+        <div *ngIf="(email?.invalid && (email?.dirty || email?.touched)) ||
+        (password?.invalid && (password?.dirty || password?.touched))" class="alert">
+            <div *ngIf="email?.invalid && 
+                (email?.dirty || email?.touched)">
+                ❗Поле email обязательно для ввода.
+            </div>
+            <div *ngIf="password?.invalid && 
+                (password?.dirty || password?.touched)">
+                ❗Поле пароль обязательно для ввода.
+            </div>
+        </div>
+    </div>
+</div>

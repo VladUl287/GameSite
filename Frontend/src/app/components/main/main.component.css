@@ -1,0 +1,268 @@
+.container {
+    width: 60%;
+    margin: 0 auto 30px auto;
+}
+
+.container p {
+    color: #fff;
+}
+
+.game-info {
+    display: flex;
+}
+
+.game-info img {
+    width: 270px;
+    height: 410px;
+}
+
+.game-name {
+    margin: 5px 0;
+    font-size: 16pt;
+    letter-spacing: 1px;
+}
+
+.info p,
+.description p {
+    margin: 0;
+}
+
+.description {
+    padding: 0 .5em;
+}
+
+.delete-btn,
+.delete-comment-btn {
+    width: fit-content;
+    border: none;
+    outline: none;
+    user-select: none;
+    display: block;
+    margin: .2em 0 0 auto;
+    padding: .2em .6em;
+    text-decoration: none;
+}
+
+.delete-btn:hover, 
+.delete-btn:focus,
+.delete-comment-btn:hover,
+.delete-comment-btn:focus {
+    cursor: pointer;
+    background-color: #efefefbd;
+}
+
+.comments {
+    margin: 1em 0 0 0;
+    border-top: 1px solid #303030;
+}
+
+.comments textarea {
+    width: 100%;
+    height: 9em;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: .5em;
+    border-radius: 3px;
+    background-color: #fae1dd;
+}
+
+.comments textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+.comments textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.comments textarea::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+    background-color: #a5a58d;
+}
+
+.rating {
+    display: flex;
+    justify-content: flex-end;
+    transform: rotateY(180deg);
+    margin: 1em 0;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating label {
+    display: block;
+    position: relative;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.rating label::before {
+    content: '★';
+    line-height: .8em;
+    position: relative;
+    display: block;
+    height: fit-content;
+    font-size: 2em;
+    color: #219ebc;
+}
+
+.rating label::after {
+    content: '★';
+    position: absolute;
+    top: 0;
+    display: block;
+    line-height: .8em;
+    height: fit-content;
+    font-size: 2em;
+    color: #ffb703;
+    opacity: 0;
+}
+
+.rating label:hover::after,
+.rating label:hover ~ label::after,
+.rating > input:checked ~ label::after{
+    opacity: 1;
+}
+
+.create-btn {
+    border: none;
+    display: block;
+    margin-left: auto;
+    font-weight: bold;
+    padding: .6em 2em;
+    color: #fff;
+    border-radius: .3em;
+    background-color: #e63946;
+}
+
+.create-btn:hover {
+    cursor: pointer;
+    background-color: #df4451f3;
+}
+
+.comment {
+    padding: .5em;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.head-comment {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: .4em 0;
+}
+
+.head-comment p {
+    user-select: none;
+    height: fit-content;
+}
+
+.comment-rating {
+    margin: 0 .4em;
+    padding: .4em .5em;
+    border-radius: .5em;
+    background-color: #ffb703;
+}
+
+.comment-rating p {
+    color: #000;
+}
+
+.comment-control-zone {
+    user-select: none;
+    position: relative;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 2px;
+}
+
+.comment-menu-input {
+    display: none;
+}
+
+.comment-menu-label {
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    user-select: none;
+    background-color: #9e9fa1;
+}
+
+.comment-control-zone:hover,
+.comment-menu-label:hover {
+    cursor: pointer;
+}
+
+.comment-menu-label::after,
+.comment-menu-label::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #9e9fa1;
+}
+
+.comment-menu-label::before {
+    top: 0;
+}
+
+.comment-menu-label::after {
+    bottom: 0;
+}
+
+.comment-menu-list {
+    display: none;
+    position: absolute;
+    right: 100%;
+    top: 0;
+}
+
+.comment-menu-btn {
+    border: none;
+    padding: .3em;
+    color: #9e9fa1;
+    margin-right: .2em;
+    background-color: transparent;
+}
+
+.comment-menu-btn:hover,
+.comment-menu-btn:focus {
+    cursor: pointer;
+    background-color: #0000004d;
+}
+
+.comment-menu-input:checked ~ .comment-menu-list {
+    display: block;
+}
+
+.comment-text {
+    width: 100%;
+    word-break: break-all;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 95%;
+        margin: 10px auto 0 auto;
+    }
+    .game-info {
+        flex-direction: column;
+    }
+    .game-info img {
+        width: 100%;
+        height: fit-content;
+    }
+    .description {
+        margin: 10px 0 0 0;
+        padding: 0;
+    }
+}

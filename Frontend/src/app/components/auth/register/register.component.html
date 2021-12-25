@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="reg-form">
+        <form [formGroup]="registerForm">
+            <div>
+                <p class="header">Регистрация</p>
+            </div>
+            <div>
+                <input class="info" type="text" placeholder="email" formControlName="email">
+            </div>
+            <div>
+                <input class="info" type="password"
+                placeholder="пароль" formControlName="password">
+            </div>
+            <div>
+                <button class="register-btn" (click)="register()" #btnRegister>Зарегистрироваться</button>
+                <a routerLink="/auth/login" class="link">Войти</a>
+            </div>
+        </form>
+        <div *ngIf="(email?.invalid && (email?.dirty || email?.touched)) ||
+            (password?.invalid && (password?.dirty || password?.touched))" class="alert">
+            <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                ❗Некорректный email.
+             </div>
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                ❗Поле пароль обязательно для ввода.Пароль должен быть не менее 10 символов. 
+                Состоять из букв латинского алфавита обоих регистров и
+                содержать цифры.
+            </div>
+        </div>
+    </div>
+</div>

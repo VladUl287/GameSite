@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="container" *ngIf="game">
+    <div class="game-info">
+        <div>
+            <img [src]="game.posterUrl" alt="">
+            <p class="game-name">{{game.name}}</p>
+            <div class="info">
+                <p>Жанр: {{game.genre.name}}</p>
+                <p>Рейтинг: {{ratingRes}}</p>
+                <p>Дата релиза: {{game.releaseDate | date:'shortDate'}}</p>
+                <button *ngIf="isAdmin" class="delete-btn" (click)="delete()">Удалить</button>
+            </div>
+        </div>
+        <div class="description">
+            <p>{{game.description}}</p>
+        </div>
+    </div>
+    <div class="comments">
+        <div *ngIf="!commentIsExists">
+            <div class="rating" *ngIf="!commentIsExists">
+                <input type="radio" name="star" id="star1" (change)="handleChange($event)">
+                <label for="star1"></label>
+                <input type="radio" name="star" id="star2" (change)="handleChange($event)">
+                <label for="star2"></label>
+                <input type="radio" name="star" id="star3" (change)="handleChange($event)">
+                <label for="star3"></label>
+                <input type="radio" name="star" id="star4" (change)="handleChange($event)">
+                <label for="star4"></label>
+                <input type="radio" name="star" id="star5" (change)="handleChange($event)">
+                <label for="star5"></label>
+                <input type="radio" name="star" id="star6" (change)="handleChange($event)">
+                <label for="star6"></label>
+                <input type="radio" name="star" id="star7" (change)="handleChange($event)">
+                <label for="star7"></label>
+                <input type="radio" name="star" id="star8" (change)="handleChange($event)">
+                <label for="star8"></label>
+                <input type="radio" name="star" id="star9" (change)="handleChange($event)">
+                <label for="star9"></label>
+                <input type="radio" name="star" id="star10" (change)="handleChange($event)">
+                <label for="star10"></label>
+            </div>
+            <textarea [(ngModel)]="commentText"></textarea>
+            <button class="create-btn" (click)="createComment()">Создать</button>
+        </div>
+        <div *ngIf="game.comments">
+            <div class="comment" *ngFor="let comment of game.comments; let i= index">
+                <div class="head-comment">
+                    <p>{{comment.userEmail}}</p>
+                    <div class="comment-rating">
+                        <p>{{comment.rating}}</p>
+                    </div>
+                    <label *ngIf="comment.userId == userId" [for]="'comment-menu' + i" class="comment-control-zone">
+                        <label [for]="'comment-menu' + i" class="comment-menu-label"></label>
+                        <input type="checkbox" class="comment-menu-input" [id]="'comment-menu' + i" hidden>
+                        <div class="comment-menu-list">
+                            <button class="comment-menu-btn" (click)="deleteComment(comment)">Удалить</button>
+                        </div>
+                    </label>
+                </div>
+                <p class="comment-text">{{comment.text}}</p>
+            </div>
+        </div>
+    </div>
+</div>

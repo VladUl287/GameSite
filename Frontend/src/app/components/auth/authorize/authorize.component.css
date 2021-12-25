@@ -1,0 +1,171 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    width: 400px;
+    padding: 55px;
+    box-shadow: 18px 18px 10px 0 #000;
+    background-color: #111;
+}
+
+form > div {
+    margin: 0 0 1.3em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header {
+    margin: 0;
+    font-size: 16pt;
+    color: #f1f1f1;
+    user-select: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+input {
+    text-align: center;
+    border-radius: 2em;
+    background-color: transparent;
+}
+
+.info {
+    width: 100%;
+    outline: none;
+    padding: 1em 0;
+    color: #f1f1f1;
+    border: 1px solid #3c50fa;
+}
+
+.info:focus {
+    box-shadow: 0 0 5px 0 #3c50fa;
+}
+
+.info.ng-touched.ng-invalid {
+    border: 1px solid #e00808;
+    box-shadow: 0 0 5px 0 #e00808;
+}
+
+.login-btn {
+    outline: none;
+    padding: 0 3em;
+    height: 3em;
+    border-radius: 2em;
+    background-color: transparent;
+    color: #f1f1f1;
+    transition: color 250ms linear,
+        background-color 150ms linear,
+        box-shadow 150ms linear;
+    border: 1px solid #01b075;
+}
+
+.login-btn:hover,
+.login-btn:focus {
+    cursor: pointer;
+    background-color: #01b075;
+    box-shadow: 0 0 10px 0 #01b075;
+}
+
+.link {
+    color:#9e9fa1;
+    margin: 0 0 0 .5em;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+    color:#3c50fa;
+}
+
+.reg-form {
+    position: relative;
+}
+
+.alert {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 10px;
+    margin: 0 0 0 15px;
+    border-radius: .3em;
+    width: fit-content;
+    background-color: #f1f1f1;
+}
+
+.alert::before {
+    content: '';
+    position: absolute;
+    top: .3em;
+    right: 98%;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 1em solid #f1f1f1;
+    border-bottom: 15px solid transparent;
+}
+
+.loading-ring:after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    border-color: #fff transparent;
+    animation: loading-ring 1s ease infinite;
+}
+
+@keyframes loading-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: block;
+        position: relative;
+    }
+    
+    .reg-form {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+    }
+
+    form {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .alert {
+        all: unset;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: .3em;
+        width: fit-content;
+        background-color: #f1f1f1;
+    }
+
+    .alert::before {
+        all: unset;
+    }
+}

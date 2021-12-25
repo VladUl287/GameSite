@@ -1,0 +1,63 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.create label {
+    color: #fff;
+    font-size: 14pt;
+}
+
+.create input {
+    width: 100%;
+    padding: 5px;
+}
+
+.create  button {
+    min-width: 150px;
+    padding: 7px;
+}
+
+.create label,
+.create input,
+.create button {
+    margin: 0 0 10px 0;
+    display: block;
+}
+
+.genres {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.603);
+}
+
+.genres p {
+    margin: 0;
+    user-select: none;
+    display: inline-block;
+}
+
+.genres button {
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: .4em;
+    background-color: #0c55c4;
+    display: inline-block;
+}
+
+.genres button:hover {
+    cursor: pointer;
+    background-color: #0066ff;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 95%;
+    }
+
+    .create label {
+        margin: 5px 0;
+    }
+}

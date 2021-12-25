@@ -1,0 +1,21 @@
+<header>
+    <nav>
+        <input type="checkbox" id="nav-toogle" class="nav-toogle">
+        <label for="nav-toogle" class="nav-toogle-label">
+            <span></span>
+        </label>
+        <div class="search-zone">
+            <input class="search-input" [ngModel]="productName" 
+            (ngModelChange)="search($event)" type="text" placeholder="поиск">
+            <div class="search-result" *ngIf="searchedGame">
+                <div *ngFor="let game of searchedGame">
+                    <a [routerLink]="['/games/main', game.id]">{{game.name}}</a>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li><a routerLink="/games" class="nav-link">Игры</a></li>
+            <li><a [routerLink]="['/account', userId]" class="account-link">{{email}}</a></li>
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div *ngIf="user">
+        <div class="account-info">
+            <p>{{user.email}}</p>
+        </div>
+        <button class="account-btn" (click)="logout()">Выйти</button>
+        <div *ngIf="isAdmin" class="create-zone">
+            <a class="adm-btn" routerLink="/games/create">Добавить игру</a>
+            <a class="adm-btn"  routerLink="/genres/create">Добавить жанр</a>
+        </div>
+    </div>
+</div>

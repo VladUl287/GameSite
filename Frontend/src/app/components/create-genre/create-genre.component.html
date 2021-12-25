@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="create">
+        <label>Название жанра</label>
+        <input type="text" [(ngModel)]="genreName">
+        <button (click)="createGenre()">Добавить</button>
+    </div>
+    <div *ngFor="let genre of genres" class="genres">
+        <p>{{genre.name}}</p>
+        <button (click)="delete(genre)">Удалить</button>
+    </div>
+</div>
